@@ -1,0 +1,524 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap");
+body {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  background-color: black;
+  font-family: "Montserrat", sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6, p, button, div, input, header, nav, footer, a, img {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.navigation-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  max-width: 1200px;
+  gap: 30px;
+  margin: 0 auto;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.logo {
+  width: 250px;
+  margin-top: 20px;
+}
+
+.nav__link {
+  font-size: 18px;
+  font-weight: 400;
+  font-style: normal;
+  color: #fff;
+  text-decoration: none;
+  margin-left: 30px;
+  position: relative;
+  -webkit-transition: color 0.3s ease;
+  transition: color 0.3s ease;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.nav__link::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background-color: gold;
+  bottom: -5px;
+  left: 0;
+  -webkit-transform: scaleX(0);
+          transform: scaleX(0);
+  -webkit-transform-origin: right;
+          transform-origin: right;
+  -webkit-transition: -webkit-transform 0.3s ease;
+  transition: -webkit-transform 0.3s ease;
+  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, -webkit-transform 0.3s ease;
+}
+
+.nav__link:hover {
+  color: gold;
+}
+
+.nav__link:hover::after {
+  -webkit-transform: scaleX(1);
+          transform: scaleX(1);
+  -webkit-transform-origin: left;
+          transform-origin: left;
+}
+
+.navigation-btn {
+  font-size: 17px;
+  font-weight: 400;
+  font-style: normal;
+  color: khaki;
+  background: none;
+  border: 1.3px solid khaki;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+/* //////// landing  */
+.landing-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  max-width: 1100px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 100px auto;
+}
+
+.landing-icon {
+  width: 300px;
+}
+
+.landing-title {
+  font-size: 30px;
+  font-weight: 200;
+  color: gold;
+}
+
+.landing-teh {
+  margin-top: 20px;
+}
+
+.landing-teh_title {
+  font-size: 20px;
+  font-weight: 200;
+  color: gold;
+}
+
+.landing-teh_images {
+  margin-top: 10px;
+}
+
+.landing-text {
+  font-size: 16px;
+  font-weight: 200;
+  color: #fff;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  max-width: 600px;
+}
+
+.btn {
+  background-color: rgba(255, 0, 0, 0);
+  color: gold;
+  border: none;
+  font-size: 15px;
+  padding: 10px;
+  border-radius: 15px;
+  margin-top: 10px;
+  cursor: pointer;
+  border: 1px solid gold;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  z-index: 1;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn::after {
+  color: #fff;
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 0;
+  background-color: gold;
+  -webkit-transition: height 0.5s;
+  transition: height 0.5s;
+  z-index: -1;
+  /* Анимация высоты */
+}
+
+.btn:hover {
+  color: black;
+}
+
+.btn:hover::after {
+  color: #000000;
+  /* При наведении высота псевдоэлемента становится равной высоте кнопки, создавая плавный эффект */
+  height: 100%;
+}
+
+
+.landing-icon {
+  width: 250px;
+  height: 400px;
+  transition: 0.3s;
+  box-shadow: 1px 1px 10px 1px #fff;
+  cursor: pointer;
+}
+
+
+.landing-icon:hover {
+  box-shadow: 1px 1px 15px 1px #fff;
+}
+
+
+
+
+#slider {
+  width: 600px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  font-size: 30px;
+  padding-bottom: 10px;
+}
+
+#sliderValue {
+  display: flex;
+  color: #fff;
+  font-weight: 700;
+  font-size: 22px;
+  width: 200px;
+  font-weight: 200;
+  margin-top: 5px;
+}
+
+.start {
+  opacity: 0;
+}
+
+.animation {
+  animation: fade .3s forwards;
+}
+
+
+@keyframes fade {
+  0%{
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100%{
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+
+.holder-animation {
+  animation: holder 4s;
+}
+
+@keyframes holder {
+  0%{
+    opacity: 1;
+  }
+  95%{
+    opacity: 1;
+  }
+  100%{
+    opacity: 0;
+  }
+}
+
+
+
+
+
+
+/* /// show form  */
+
+.showForm {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #302e2e;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  z-index: 1005;
+  padding-top: 30px;
+
+}
+
+.modal-krest {
+  position: absolute;
+  top: 10px;
+  left: 350px;
+  width: 50px;
+  cursor: pointer;
+ transition: 0.3s;
+}
+
+.modal-krest:hover {
+  transform: scale(1.1);
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+  display: none;
+}
+
+
+
+
+
+.show-input {
+  max-width: 400px;
+  border: 2px solid #fff;
+  background: none;
+  outline: none;
+  padding: 10px;
+  border-radius: 20px;
+
+  color: #fff;
+  font-size: 20px;
+  margin-top: 3px;
+}
+
+.message-show {
+  max-width: 400px;
+  height: 200px;
+  border: 2px solid #fff;
+  border-radius: 20px;
+  padding: 10px;
+  background: none;
+  outline: none;
+  font-size: 20px;
+  margin-top: 3px;
+  color: #fff;
+  
+}
+
+.label {
+  display: flex;
+  flex-direction: column;
+}
+
+.label-sl {
+  color: #fff;
+  margin-left: 4px;
+}
+
+
+
+.show-submit {
+  color: black;
+  background-color: gold;
+  text-transform: uppercase;
+  font-weight: 500;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  align-items: center;
+  margin: 0 auto;
+  padding: 15px 50px 15px 50px;
+  margin-top: 30px;
+  margin-bottom: 40px;
+  transition: 0.3s;
+  display: flex;
+  justify-content: center;
+}
+
+.show-submit:hover {
+  transform: scale(1.1);
+}
+
+.show-container {
+  position: relative;
+  padding-top: 20px;
+}
+
+
+.hamburger {
+  display: none;
+}
+
+
+@media screen and (max-width: 1205px) {
+  
+  .navigation {
+    padding: 10px;
+  }
+
+}
+
+
+@media screen and (max-width: 1135px) {
+  
+  .landing-container {
+    max-width: 1000px;
+  }
+
+}
+
+@media screen and (max-width: 1015px) {
+  
+  .landing-container {
+    max-width: 850px;
+    gap: 10px;
+  }
+
+}
+
+
+@media screen and (max-width: 900px) {
+  
+  .landing-container {
+    max-width: 850px;
+    /* gap: 10px; */
+    gap: 10px;
+    padding: 20px;
+  }
+
+  #slider {
+    width: 500px;
+  }
+
+  .landing-text {
+    max-width: 450px;
+  }
+
+}
+
+
+@media screen and (max-width: 800px) {
+
+  .landing-icon {
+    display: none;
+  }
+
+}
+
+
+@media screen and (max-width: 613px) {
+
+  .logo {
+    width: 200px;
+  }
+
+  .hamburger {
+    display: block;
+    z-index: 1003;
+  }
+
+  .nav {
+    display: flex;
+    flex-direction: column;
+    /* padding-left: 30px; */
+    padding-top: 100px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1002;
+    width: 100%;
+    height: 100%;
+    background-color: #000000;
+    transition: 0.5s;
+    transform: translateX(100%);
+    color: #fff;
+  }
+
+  .nav__link {
+    color: #fff;
+    font-size: 32px;
+    text-align: center;
+    margin-top: 30px;
+    border-bottom: none;
+  }
+
+  #slider {
+    width: 400px;
+  }
+
+  .landing-title {
+    font-size: 22px;
+  }
+
+  .landing-text {
+    font-size: 14px;
+  }
+
+  .btn {
+    font-size: 14px;
+  }
+
+
+  .animation {
+    font-size: 16px;
+  }
+
+}
+
+.is-active {
+  transform: translateX(0%);
+}
+
+
+@media screen and (max-width: 425px) {
+
+  #slider {
+    width: 360px;
+  }
+
+  .landing-title {
+    font-size: 18px;
+  }
+
+  .animation {
+    font-size: 14px;
+  }
+
+  .landing-text {
+    width: 350px;
+  }
+
+  #sliderValue {
+    width: 0;
+  }
+
+  .landing-container {
+    padding: 10px;
+  }
+
+
+}

@@ -1,0 +1,60 @@
+*, *::before, *::after {
+    padding: 0;
+    margin: 0 auto;
+    box-sizing: border-box;
+  }
+  
+  body {
+    background-color: #222;
+    background-image: radial-gradient(circle at center, #222, #111 300px);
+    color: #fff;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    perspective: 420px;
+    overflow: hidden;
+  }
+  
+  $speed: 12s;
+  $leafCount: 60;
+  
+  .flower {
+    position: relative;
+    transform-style: preserve-3d;
+    animation: rotateFlower $speed * 5 infinite linear;
+  
+    @keyframes rotateFlower {
+      to { transform: rotateY(360deg); }
+    }
+  }
+  
+  .leaf {
+    position: absolute;
+    height: 120px;
+    transform-origin: top;
+    transform-style: preserve-3d;
+    clip-path: polygon(0 100%, 50% 0, 100% 100%, 0 100%);
+    background-image: linear-gradient(#000e, #fff1);
+    border-radius: 100px;
+    animation:
+      leafOpen $speed infinite ease-in-out,
+      ocLeafWidth $speed/2 infinite alternate ease-in-out;
+  
+    @for $i from 0 through $leafCount {
+      &:nth-child(#{$i}) {
+        --leafAngle: #{$i * 30}deg;
+        animation-delay: $speed / $leafCount * $i * -1;
+        background-color: hsl($i * 360 / $leafCount, 75%, 75%);
+      }
+    }
+  
+    @keyframes leafOpen {
+      from { transform: translateZ(-30px) rotate(var(--leafAngle)) rotateX(-90deg) rotateY(-15deg); }
+      to { transform: translateZ(30px) rotate(var(--leafAngle)) rotateX(90deg) rotateY(45deg); }
+    }
+    @keyframes ocLeafWidth {
+      from { width: 0; }
+      to { width: 60px; }
+    }
+  }

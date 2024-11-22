@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>seo</title>
+    <link rel="stylesheet" href="../css/hamburgers.css">
+
+    <link rel="stylesheet" href="../css/landing.css">
+</head>
+<body>
+    <div class="navigation">
+        <div class="navigation-container">
+            <a href="./index.html"><img src="../image/logoalfikirsoft3.jpg" alt="../image/logoalfikirsoft3.jpg" class="logo"></a>
+            <nav class="nav">
+                <a href="./about.html" class="nav__link">О нас</a>
+                <a target="_blank" href="https://t.me/awymportfolio" class="nav__link">Кейсы</a>
+                <a href="./contact.html" class="nav__link">Контакты</a>
+            </nav>
+
+            <button class="hamburger hamburger--elastic" type="button">
+                <span class="hamburger-box">
+                  <span class="hamburger-inner"></span>
+                </span>
+              </button>
+        </div>
+    </div>
+
+
+    <div class="landing">
+        <div class="landing-container">
+            <div class="landing-text_content">
+
+                <div id="slider">
+                    <h2 class="landing-title">Seo - </h2>
+                    <div class="animade-title" id="sliderValue"></div>
+                </div>
+
+                
+
+                <p class="landing-text">
+                    Это специально разработанная веб-страница, которая содержит концентрированную информацию о продукте, услуге или предложении и призвана побудить посетителя к определённому действию, будь то покупка, подписка или запрос дополнительной информации.
+                </p>
+
+                <button class="btn">Связаться с нами</button>
+
+                <div class="landing-teh">
+                    <span class="landing-teh_title">Технологии:</span>
+
+                    <div class="landing-teh_images">
+
+                        <img src="../image/html.svg" alt="../image/html.svg" class="landing-teh_icon">
+                        <img src="../image/css.svg" alt="../image/css.svg" class="landing-teh_icon">
+                        <img src="../image/js.svg" alt="../image/js.svg" class="landing-teh_icon">
+                        <img src="../image/figma.svg" alt="../image/figma.svg" class="landing-teh_icon">
+                        <img src="../image/wordpress.svg" alt="../image/wordpress.svg" class="landing-teh_icon">
+
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="landing-image_content">
+                <img src="../image/seo.jpg" alt="../image/seo.jpg" class="landing-icon">
+            </div>
+        </div>
+    </div>
+
+
+   
+
+
+    <script>
+
+document.querySelector(".btn").addEventListener("click", function() {
+                window.location.href = "./contact.html";
+            });
+
+var hamburger = document.querySelector(".hamburger");
+            var nav = document.querySelector(".nav");
+            // On click
+            hamburger.addEventListener("click", function() {
+                // Toggle class "is-active"
+                hamburger.classList.toggle("is-active");
+                nav.classList.toggle("is-active");
+
+                // Do something else, like open/close menu
+            });
+
+            var sliderCounter = 0;
+            var sliderContent = [
+            "Продажи",
+            "Продвижение",
+            "Узнаваемость"
+            ];
+
+            var slider = document.querySelector("#slider");
+            var sliderValue = document.querySelector("#sliderValue");
+
+            function slide() {
+            if (sliderCounter >= sliderContent.length) {
+                sliderCounter = 0;
+            }
+
+            sliderValue.innerHTML = "";
+            
+            sliderValue.classList.remove("holder-animation");
+            void sliderValue.offsetWidth;
+            sliderValue.classList.add("holder-animation");
+            
+            for (i = 0; i < sliderContent[sliderCounter].length; i++) {
+                let letterDiv = document.createElement("div");
+                letterDiv.innerHTML = sliderContent[sliderCounter][i];
+
+                if (letterDiv.innerHTML == " ") {
+                letterDiv.innerHTML = "&nbsp;";
+                }
+                letterDiv.classList.add("start");
+                letterDiv.classList.add("animation");
+                letterDiv.style.animationDelay = i / 10 + "s";
+                sliderValue.appendChild(letterDiv);
+            }
+
+            sliderCounter++;
+            }
+
+            slide();
+            setInterval(slide, 3000);
+
+
+            //// btn contact
+
+
+            document.querySelector(".btnlanding").addEventListener("click", function() {
+                window.location.href = "./contact.html";
+            });
+
+
+    </script>
+</body>
+</html>

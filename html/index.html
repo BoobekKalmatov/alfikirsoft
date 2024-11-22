@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ALFIKRSOFT</title>
+    <link rel="stylesheet" href="../css/hamburgers.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    
+    <div class="navigation">
+        <div class="navigation-container">
+            <img src="../image/logoalfikirsoft3.jpg" alt="../image/logoalfikirsoft3.jpg" class="logo">
+            <nav class="nav">
+                <a href="./about.html" class="nav__link">О нас</a>
+                <a target="_blank" href="https://t.me/awymportfolio" class="nav__link">Кейсы</a>
+                <a href="./contact.html" class="nav__link">Контакты</a>
+            </nav>
+
+            <button class="hamburger hamburger--elastic" type="button">
+                <span class="hamburger-box">
+                  <span class="hamburger-inner"></span>
+                </span>
+              </button>
+           
+        </div>
+    </div>
+
+    
+    <header class="header">
+        <div class="header-container">
+            <div class="header-text_content">
+
+                <div id="slider">
+                    <div class="slide-title">ALFIKRSOFT - </div>
+                    <div class="animade-title" id="sliderValue"></div>
+                </div>
+
+                <h1 class="header-title">Используйте наши услуги и будьте первыми!</h1>
+
+                <button class="btn">Связаться с нами</button>
+                
+
+            </div>
+        </div>
+    </header>
+    
+
+    <!-- <div class="showForm" id="modal">
+
+       
+        <img src="../image/crossmark.png" alt="../image/crossmark.png" class="modal-krest">
+   
+
+    <div class="show-container">
+        <form class="show-form">
+            <label class="show-label">
+                <span class="label-sl">Имя</span>
+                <input name="name" placeholder="Введите ваше имя" type="text" class="show-input">
+            </label>
+            <label class="show-label">
+                <span class="label-sl">Номер телефона</span>
+                <input name="tel" placeholder="+8 (999) 999-99-99" type="tel" class="show-input">
+            </label>
+            <label class="show-label">
+                <span class="label-sl">Ваше сообщение</span>
+                <textarea name="text" id="text" cols="30" rows="10" class="message-show" placeholder="Ваше сообщение"></textarea>
+            </label>
+        </form>
+        <button class="show-submit">Отправить</button>
+    </div>
+    </div> -->
+
+    <div id="drag-container">
+        <div id="spin-container">
+          <img id="img1" class="spin-image" src="../image/landing.jpg" alt="../image/landing.jpg">
+          <img id="img2" class="spin-image" src="../image/site.jpg" alt="../image/site.jpg">
+          <img id="img3" class="spin-image" src="../image/korpotivna.jpg" alt="../image/korpotivna.jpg">
+          <img id="img4" class="spin-image" src="../image/vizitka.jpg" alt="../image/vizitka.jpg">
+          <img id="img5" class="spin-image" src="../image/magaz.jpg" alt="../image/magaz.jpg">
+          <img id="img6" class="spin-image" src="../image/seo.jpg" alt="../image/seo.jpg">
+          
+
+          <p>ALFIKRSOFT</p>
+        </div>
+        <div id="ground">
+            kfdf
+        </div>
+      </div>
+
+
+      <div class="container">
+        <a href="#" class="fa fa-instagram" id="apple"></a>
+        <a href="#" class="fa fa-telegram" id="twitter"></a>
+        <a href="#" class="fa fa-github-square github" id="github"></a>
+        <a href="#" class="fa fa-whatsapp" id="facebook"></a>
+      </div>
+
+    
+      <script>
+        ////// new site
+
+
+
+            document.getElementById("img1").addEventListener("click", function() {
+                window.location.href = "./landing.html";
+            });
+
+
+            document.getElementById("img2").addEventListener("click", function() {
+                window.location.href = "./site.html";
+            });
+
+
+            document.querySelector(".btn").addEventListener("click", function() {
+                window.location.href = "./contact.html";
+            });
+
+
+            document.getElementById("img3").addEventListener("click", function() {
+                window.location.href = "./korporotiv.html";
+            });
+
+            document.getElementById("img4").addEventListener("click", function() {
+                window.location.href = "./vizitka.html";
+            });
+
+
+            document.getElementById("img5").addEventListener("click", function() {
+                window.location.href = "./magaz.html";
+            });
+
+            document.getElementById("img6").addEventListener("click", function() {
+                window.location.href = "./seo.html";
+            });
+
+
+            // Look for .hamburger
+            var hamburger = document.querySelector(".hamburger");
+            var nav = document.querySelector(".nav");
+            // On click
+            hamburger.addEventListener("click", function() {
+                // Toggle class "is-active"
+                hamburger.classList.toggle("is-active");
+                nav.classList.toggle("is-active");
+
+                // Do something else, like open/close menu
+            });
+
+      </script>
+
+
+<script src="../main.js"></script>
+</body>
+</html>
